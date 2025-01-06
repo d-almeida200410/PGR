@@ -14,7 +14,10 @@
             <div class="logo">
                 <a href="#home"><img src="/images/Rever E Aprender (1).png" alt="Logo" /></a>
             </div>
-            <ul style="font-family: 'Times New Roman', Times, serif;">
+            <div class="menu-icon" onclick="toggleMenu()">
+                &#9776; <!-- Ícone de menu -->
+            </div>
+            <ul style="font-family: 'Times New Roman', Times, serif;" class="nav-links">
                 <li><a href="#home">Principal</a></li>
                 <li><a href="#horarios">Horários</a></li>
                 <li><a href="#notebook">Contatos</a></li>
@@ -80,7 +83,6 @@
                             Construção de Palavras e Frases;<br>
                             Entendimento do Princípio Alfabético;<br>
                             Compreensão de Leitura e Escrita.
-
                         </p>
                         <button id="animate_confetti">Contate-nos 📞</button>
                     </div>
@@ -96,8 +98,8 @@
                         <p>Atividades Para Casa;<br>
                             Revisão dos Conteúdos (Ministrados em sala de aula);<br>
                             Exercícios Extras.<br>
-                            
-                            <p style="color: red;">OBS: Não Lecionamos Inglês e Redação</p>
+
+                        <p style="color: red;">OBS: Não Lecionamos Inglês e Redação</p>
 
                         </p>
                         <button id="animate_confetti1">Contate-nos 📞</button>
@@ -115,14 +117,12 @@
                             Revisão dos Conteúdos (Ministrados em sala de aula);<br>
                             Exercícios Extras.
 
-                            <p style="color: red;">OBS: Não Lecionamos Inglês e Redação</p>
-
-
+                        <p style="color: red;">OBS: Não Lecionamos Inglês e Redação</p>
                         </p>
                         <button id="animate_confetti2">Contate-nos 📞</button>
                     </div>
                 </div>
-            </div> 
+            </div>
             <div class="card">
                 <div class="card-inner">
                     <div class="card-front">
@@ -131,14 +131,13 @@
                     </div>
                     <div class="card-back">
                         <p> 2 Horas de Aula;<br>
-                            O Que Ficou Acordado Com o Responsável. 
+                            O Que Ficou Acordado Com o Responsável.
                         </p>
                         <button id="animate_confetti3">Contate-nos 📞</button>
                     </div>
                 </div>
             </div>
-            <!-- Repita para os outros cards -->
-        </div>        
+        </div>
         <div class="contato">
             <h1>Contato</h1>
         </div>
@@ -152,7 +151,7 @@
                 <a href="https://www.google.com/maps/search/?api=1&query=TV.+Bom+Jardim+303-Cidade+Velha,+entre+Triunvirato+e+Veiga+Cabral"
                     target="_blank">
                     TV. Bom Jardim 303.Cidade Velha.Belem-PA,CEP 66023-140.
-                </a>   
+                </a>
             </p>
             <p>
                 <img src="/images/whatsapp.png" alt="Ícone do WhatsApp" class="icon">
@@ -161,10 +160,67 @@
                     (91) 98807-4549
                 </a>
             </p>
-        </div>
-    </div>
-</body>
-<script src="/script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+            <div id="map" style="height: 300px; width: 100%;"></div>
 
+            <button id="agendarVisitaBtn">Agendar Visita</button>
+
+            <div class="form-container" id="formContainer">
+                <button id="closeFormBtn" class="close-btn">Fechar</button>
+                <h2>Agendamento de Visita</h2>
+                <form id="contactForm">
+                    <label for="responsavel">Nome do Responsável:</label>
+                    <input type="text" id="responsavel" name="responsavel" required />
+
+                    <label for="aluno">Nome do Aluno:</label>
+                    <input type="text" id="aluno" name="aluno" required />
+
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required />
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required />
+
+                    <label for="nivelEnsino">Nível de Ensino Escolar:</label>
+                    <select id="nivelEnsino" name="nivelEnsino" required>
+                        <option value="" disabled selected>Selecione...</option>
+                        <option value="Alfabetização">Alfabetização</option>
+                        <option value="Fundamental I">Fundamental I</option>
+                        <option value="Fundamental II">Fundamental II</option>
+                        <option value="Hora Aula">Hora Aula</option>
+                    </select>
+
+                    <label for="escola">Escola Atual:</label>
+                    <input type="text" id="escola" name="escola" required />
+
+                    <label for="horarioVisita">Horário da Visita:</label>
+                    <input type="datetime-local" id="horarioVisita" name="horarioVisita" required />
+
+                    <button type="submit">Enviar</button>
+                </form>
+                <div class="form-footer">
+                    Ao enviar, você será redirecionado para o WhatsApp.
+                </div>
+            </div>
+
+        </div>
+</body>
+<script src="script.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+    // Inicializar o mapa usando Leaflet.js
+    const map = L.map('map').setView([-1.4554, -48.4895], 15); // Coordenadas para Belém, PA
+
+    // Adicionar camada de mapa (OpenStreetMap)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 21,
+    }).addTo(map);
+
+    // Adicionar marcador na localização desejada
+    L.marker([-1.4554, -48.4895])
+        .addTo(map)
+        .bindPopup('TV. Bom Jardim 303, Cidade Velha, Belém, PA')
+        .openPopup();
+</script>
 </html>

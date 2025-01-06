@@ -34,13 +34,19 @@ html {
     z-index: 1000;
     position: fixed;
     width: 100%;
-    flex-wrap: wrap; /* Permite quebra de linha em telas menores */
 }
 
 .navbar .logo img {
-    height: 50px; /* Altura reduzida para telas menores */
+    height: 50px;
     margin-right: 10px;
     border-radius: 25px;
+}
+
+.navbar .menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
 }
 
 .navbar ul {
@@ -48,18 +54,16 @@ html {
     display: flex;
     margin: 0;
     padding: 0;
-    flex-wrap: wrap; /* Ajusta os itens em telas pequenas */
-    justify-content: center; /* Centraliza em telas menores */
 }
 
 .navbar ul li {
-    margin: 0 10px; /* Margem reduzida para evitar sobreposição */
+    margin: 0 10px;
 }
 
 .navbar ul li a {
     text-decoration: none;
     color: white;
-    font-size: 16px; /* Fonte reduzida em dispositivos menores */
+    font-size: 16px;
     transition: color 0.3s;
 }
 
@@ -69,28 +73,34 @@ html {
 
 /* Estilos responsivos */
 @media (max-width: 768px) {
-    .navbar {
-        padding: 10px 5%;
-    }
-
-    .navbar .logo img {
-        height: 40px; /* Ajusta tamanho do logo para telas menores */
-    }
-
     .navbar ul {
-        flex-direction: column; /* Empilha os itens no menu */
+        display: none; /* Oculta o menu */
+        flex-direction: column;
         align-items: center;
-        gap: 10px; /* Adiciona espaçamento entre itens */
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Ajuste dependendo da altura da navbar */
+        left: 0;
+    }
+
+    .navbar ul.show {
+        display: flex; /* Mostra o menu quando ativo */
+    }
+
+    .navbar .menu-icon {
+        display: block; /* Mostra o ícone em telas menores */
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
     }
 
     .navbar ul li a {
-        font-size: 14px; /* Reduz fonte ainda mais em telas pequenas */
-    }
-
-    .home {
-        padding: 10px; /* Reduz padding em dispositivos menores */
+        font-size: 18px;
     }
 }
+
 
 #chalkboard {
     background-color: #2c2c2c; /* Fundo estilo quadro negro */
@@ -616,6 +626,111 @@ a:hover {
         font-size: 1.5rem;
     }
 }
+
+.form-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: none;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #555;
+}
+
+input, select, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+textarea {
+    height: 80px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.form-footer {
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+}
+
+#agendarVisitaBtn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#agendarVisitaBtn:hover {
+    background-color: #45a049;
+}
+.close-btn {
+    position: relative;
+    background-color: red;
+    color: white;
+    border-radius: 10%;
+    font-size: 13px;
+    cursor: pointer;
+    max-width: 15%;
+    padding: 8px 12px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.close-btn:hover {
+    background-color: darkred;
+    transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .close-btn {
+        font-size: 12px;
+        max-width: 20%;
+    }
+}
+
+@media (max-width: 480px) {
+    .close-btn {
+        font-size: 10px;
+        max-width: 30%;
+        padding: 6px 10px;
+    }
+}
+
+
+
 
 
 

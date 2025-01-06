@@ -117,9 +117,6 @@ document.getElementById("animate_confetti1").addEventListener("click", () => {
       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
       window.location.href = whatsappUrl;
   }, 1000);
-
-  
-
   
 });
 
@@ -177,9 +174,61 @@ document.getElementById("animate_confetti3").addEventListener("click", () => {
       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
       window.location.href = whatsappUrl;
   }, 1000);
-
-  
-
-  
 });
+
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+  e.preventDefault(); // Impede o envio padrão do formulário
+
+  // Obtendo os valores dos campos
+  const responsavel = document.getElementById('responsavel').value;
+  const aluno = document.getElementById('aluno').value;
+  const telefone = document.getElementById('telefone').value;
+  const email = document.getElementById('email').value;
+  const nivelEnsino = document.getElementById('nivelEnsino').value;
+  const escola = document.getElementById('escola').value;
+  const horarioVisita = document.getElementById('horarioVisita').value;
+
+  // Montando a mensagem para o WhatsApp
+  const whatsappNumber = '5591988074549'; // Substitua pelo seu número de WhatsApp
+  const text = `Olá! Gostaria de agendar uma visita
+  Nome do Responsável: ${responsavel}
+  Nome do Aluno: ${aluno}
+  Telefone: ${telefone}
+  E-mail: ${email}
+  Nível de Ensino: ${nivelEnsino}
+  Escola Atual: ${escola}
+  Horário da Visita: ${horarioVisita}`;
+
+  // Criando o link do WhatsApp
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+
+  // Abrindo o link em uma nova aba
+  window.open(whatsappUrl, '_blank');
+});
+
+const agendarVisitaBtn = document.getElementById('agendarVisitaBtn');
+const formContainer = document.getElementById('formContainer');
+const closeFormBtn = document.getElementById('closeFormBtn');
+
+// Exibe o formulário ao clicar no botão "Agendar Visita"
+agendarVisitaBtn.addEventListener('click', () => {
+    formContainer.style.display = 'block';
+    agendarVisitaBtn.style.display = 'none';
+});
+
+// Fecha o formulário e retorna para o botão inicial
+closeFormBtn.addEventListener('click', () => {
+    formContainer.style.display = 'none';
+    agendarVisitaBtn.style.display = 'block';
+});
+
+function toggleMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('show');
+}
+
+
+
+
+
 
