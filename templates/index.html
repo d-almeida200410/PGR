@@ -5,14 +5,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rever e Aprender</title>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
 </head>
 
 <body class="home-page">
     <div class="home" id="home">
         <nav class="navbar">
             <div class="logo">
-                <a href="#home"><img src="/images/Rever E Aprender (1).png" alt="Logo" /></a>
+                <a href="#home"><img src="/static/images/Rever E Aprender (1).png" alt="Logo" /></a>
             </div>
             <div class="menu-icon" onclick="toggleMenu()">
                 &#9776; <!-- Ícone de menu -->
@@ -33,7 +33,6 @@
         <div id="chalkboard">
             Bem vindo ao site do Rever e Aprender.<span class="blinking-cursor">|</span>
         </div>
-
     </div>
 
     <div id="horarios" class="horarios">
@@ -64,6 +63,7 @@
                     <td>14h-16h, 14h-15:30 e 16h-18h</td>
                     <td>14h-16h, 14h-15:30 e 16h-18h</td>
                     <td>14h-16h, 14h-15:30 e 16h-18h</td>
+                </tr>
             </tbody>
         </table>
 
@@ -74,12 +74,12 @@
             <div class="card">
                 <div class="card-inner">
                     <div class="card-front">
-                        <img class="card-img" src="/images/livros.png" alt="Imagem 1" />
+                        <img class="card-img" src="/static/images/livros.png" alt="Imagem 1" />
                         <h2 class="card-title">Alfabetização</h2>
                     </div>
                     <div class="card-back">
                         <p>Reconhecimento de Letras;
-                            Compreensão dos sons correspondentes as letras;<br>
+                            Compreensão dos sons correspondentes às letras;<br>
                             Construção de Palavras e Frases;<br>
                             Entendimento do Princípio Alfabético;<br>
                             Compreensão de Leitura e Escrita.
@@ -91,16 +91,14 @@
             <div class="card">
                 <div class="card-inner">
                     <div class="card-front">
-                        <img class="card-img" src="/images/sinal.png" alt="Imagem 1" />
+                        <img class="card-img" src="/static/images/sinal.png" alt="Imagem 1" />
                         <h2 class="card-title">Fundamental I</h2>
                     </div>
                     <div class="card-back">
                         <p>Atividades Para Casa;<br>
                             Revisão dos Conteúdos (Ministrados em sala de aula);<br>
                             Exercícios Extras.<br>
-
                         <p style="color: red;">OBS: Não Lecionamos Inglês e Redação</p>
-
                         </p>
                         <button id="animate_confetti1">Contate-nos 📞</button>
                     </div>
@@ -109,14 +107,13 @@
             <div class="card">
                 <div class="card-inner">
                     <div class="card-front">
-                        <img class="card-img" src="/images/dois.png" alt="Imagem 1" />
+                        <img class="card-img" src="/static/images/dois.png" alt="Imagem 1" />
                         <h2 class="card-title">Fundamental II</h2>
                     </div>
                     <div class="card-back">
                         <p>Atividades Para Casa;<br>
                             Revisão dos Conteúdos (Ministrados em sala de aula);<br>
-                            Exercícios Extras.
-
+                            Exercícios Extras.<br>
                         <p style="color: red;">OBS: Não Lecionamos Inglês e Redação</p>
                         </p>
                         <button id="animate_confetti2">Contate-nos 📞</button>
@@ -126,11 +123,11 @@
             <div class="card">
                 <div class="card-inner">
                     <div class="card-front">
-                        <img class="card-img" src="/images/tempo-de-aula.png" alt="Imagem 1" />
+                        <img class="card-img" src="/static/images/tempo-de-aula.png" alt="Imagem 1" />
                         <h2 class="card-title">Hora Aula</h2>
                     </div>
                     <div class="card-back">
-                        <p> 2 Horas de Aula;<br>
+                        <p>2 Horas de Aula;<br>
                             O Que Ficou Acordado Com o Responsável.
                         </p>
                         <button id="animate_confetti3">Contate-nos 📞</button>
@@ -146,7 +143,7 @@
                 Rever e Aprender
             </div>
             <p>
-                <img src="/images/mapa.png" alt="Ícone de mapa" class="icon">
+                <img src="/static/images/mapa.png" alt="Ícone de mapa" class="icon">
                 Localização:
                 <a href="https://www.google.com/maps/search/?api=1&query=TV.+Bom+Jardim+303-Cidade+Velha,+entre+Triunvirato+e+Veiga+Cabral"
                     target="_blank">
@@ -154,32 +151,26 @@
                 </a>
             </p>
             <p>
-                <img src="/images/whatsapp.png" alt="Ícone do WhatsApp" class="icon">
+                <img src="/static/images/whatsapp.png" alt="Ícone do WhatsApp" class="icon">
                 WhatsApp:
                 <a href="https://wa.me/5591988074549" target="_blank">
                     (91) 98807-4549
                 </a>
             </p>
             <div id="map" style="height: 300px; width: 100%;"></div>
-
             <button id="agendarVisitaBtn">Agendar Visita</button>
-
             <div class="form-container" id="formContainer">
                 <button id="closeFormBtn" class="close-btn">Fechar</button>
                 <h2>Agendamento de Visita</h2>
                 <form id="contactForm">
                     <label for="responsavel">Nome do Responsável:</label>
                     <input type="text" id="responsavel" name="responsavel" required />
-
                     <label for="aluno">Nome do Aluno:</label>
                     <input type="text" id="aluno" name="aluno" required />
-
                     <label for="telefone">Telefone:</label>
                     <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required />
-
                     <label for="email">E-mail:</label>
                     <input type="email" id="email" name="email" required />
-
                     <label for="nivelEnsino">Nível de Ensino Escolar:</label>
                     <select id="nivelEnsino" name="nivelEnsino" required>
                         <option value="" disabled selected>Selecione...</option>
@@ -188,23 +179,51 @@
                         <option value="Fundamental II">Fundamental II</option>
                         <option value="Hora Aula">Hora Aula</option>
                     </select>
-
                     <label for="escola">Escola Atual:</label>
                     <input type="text" id="escola" name="escola" required />
-
                     <label for="horarioVisita">Horário da Visita:</label>
                     <input type="datetime-local" id="horarioVisita" name="horarioVisita" required />
-
                     <button type="submit">Enviar</button>
                 </form>
                 <div class="form-footer">
                     Ao enviar, você será redirecionado para o WhatsApp.
                 </div>
             </div>
-
+        </div>
+    </div>
+            <div class="chatbot-icon" id="chatbot-icon">
+            <img src="/static/images/Blue Learning Centre Logo.png" />
+        </div>
+        <div class="chat-container" id="chat-container">
+            <div class="chat-header">
+                <img src="/static/images/Blue Learning Centre Logo.png" alt="chatbot" class="chat-avatar" />
+                <span class="chat-title">Rever e Aprender</span>
+                <button class="close-btn" id="close-btn">✖</button>
+            </div>
+            <div id="chat-box" class="chat-box">
+                <div class="chat-message bot">
+                    <img src="/static/images/Blue Learning Centre Logo.png" alt="chatbot" class="message-avatar" />
+                    <span>Olá! Sou o Rever e Aprender. Selecione uma das opções de ajuda abaixo:<br />
+                        1 -> Horários de Aula⌚<br />
+                        2 -> Níveis de Ensino Escolar🏫<br />
+                        3 -> Telefone para Contato📞<br />
+                        4 -> Pacotes de Aula👩‍🏫<br/>
+                        5 -> Localização Detalhada🗺️<br/>
+                    </span>
+                </div>
+            </div>
+            <div class="input-container">
+                <input type="text" id="mensagem-input" placeholder="Digite sua mensagem aqui..." autofocus />
+                <button id="enviar-btn" title="Enviar mensagem">➤</button>
+            </div>
+        </div>
+        <div id="typing-indicator" class="typing-indicator" style="display: none">
+            <img src="/static/images/Blue Learning Centre Logo.png" alt="ÁlvaroBot" class="message-avatar" />
+            <span>O Bot está pensando...</span>
         </div>
 </body>
-<script src="script.js"></script>
+
+<script src="/static/js/script.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
