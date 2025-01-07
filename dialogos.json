@@ -1,38 +1,26 @@
 
 {
-    "saudacoes": {
-        "oi": "Olá! Como posso ajudar você hoje?",
-        "olá": "Oi! O que posso fazer por você?",
-        "bom dia": "Bom dia! Espero que você tenha um ótimo dia!",
-        "boa tarde": "Boa tarde! Como posso ser útil?",
-        "boa noite": "Boa noite! Está precisando de algo?",
-        "e aí": "E aí! Como posso te ajudar hoje?",
-        "salve": "Salve!",
-        "hello": "Hello! How can I assist you today?",
-        "hi": "Hi there! What can I do for you?"
-    },
-    "despedidas": {
+    "perguntas": {
+        "como você está?": "Estou bem!",
+        "tudo bem?": "Estou bem!",
+        "1": "O Reforço Rever e Aprender, conta com Horários das 8:30h-10:30h da manhã e 14h-16h ou 14h-15:30 e 16h-18h da tarde.\n",
+        "2": "Trabalhamos do Ensino Infantil(Alfabetização) Até o Ensino Fundamental II.\n  ", 
+        "3": "Nosso número é +55 91 98807-4549 Ligação e WhatsApp, Email leilatatianeconceicao@gmail.com.",
+        "4": "Possuímos diversos pacotes para todos os níveis de ensino oferecidos pelo reforço entre em contato para saber mais.",
+        "5": "Estamos Localizados na TV. Bom Jardim 303.Cidade Velha.Belém-PA,CEP 66023-140.",
         "tchau": "Até logo! Tenha um ótimo dia!",
         "adeus": "Adeus! Espero te ver em breve!",
         "até mais": "Até mais! Estarei por aqui se precisar.",
         "até logo": "Até logo! Volte quando quiser.",
         "falou": "Falou! Qualquer coisa, estou por aqui.",
         "até breve": "Até breve! Fique à vontade para voltar quando quiser.",
-        "nos vemos": "Nos vemos em breve! Cuide-se."
-    },
-    "perguntas": {
-        "como você está?": "Estou bem!",
-        "tudo bem?": "Estou bem!",
-        "qual é o seu nome?": "Eu sou o ÁlvaroBot, criado para ajudar você.",
-        "o que você pode fazer?": "Posso responder perguntas, conversar e ajudar com informações básicas!",
-        "que horas são?": "Eu não tenho um relógio interno, mas você pode verificar no seu dispositivo.",
-        "qual é o seu propósito?": "Meu propósito é ajudar você com informações e interações!",
-        "o que você sabe fazer?": "Posso ajudar com perguntas, fornecer informações e até conversar um pouco!",
-        "você pode me contar uma piada?": "Por que o computador foi ao médico? Porque estava com um vírus!",
-        "1": "O Reforço Rever e Aprender, conta com Horários das 8:30h-10:30h da manhã e 14h-16h ou 14h-15:30 e 16h-18h da tarde.\n",
-        "2": "Trabalhamos do Ensino Infantil(Alfabetização) Até o Ensino Fundamental II.\n  ", 
-        "3": "Nosso número é +55 91 98807-4549 Ligação e WhatsApp, Email leilatatianeconceicao@gmail.com.",
-        "4": "Possuímos diversos pacotes para todos os níveis de ensino oferecidos pelo reforço entre em contato para saber mais.",
-        "5": "Estamos Localizados na TV. Bom Jardim 303.Cidade Velha.Belém-PA,CEP 66023-140."
+        "nos vemos": "Nos vemos em breve! Cuide-se.",
+        "oi": "Olá! Como posso ajudar você hoje?",
+        "olá": "Oi! O que posso fazer por você?",
+        "bom dia": "Bom dia! Espero que você tenha um ótimo dia!",
+        "boa tarde": "Boa tarde! Como posso ser útil?",
+        "boa noite": "Boa noite! Está precisando de algo?",
+        "e aí": "E aí! Como posso te ajudar hoje?",
+        "salve": "Salve!"
     }
 }
