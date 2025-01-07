@@ -12,7 +12,7 @@ html {
 }
 
 .home {
-    background-image: url('/static/images/Background_Principal.jpg');
+    background-image: url('/images/Background_Principal.jpg');
     background-size: cover;
     background-position: center;
     padding: 20px;
