@@ -227,6 +227,136 @@ function toggleMenu() {
   navLinks.classList.toggle('show');
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const chatContainer = document.getElementById("chat-container");
+  const chatbotIcon = document.getElementById("chatbot-icon");
+  const closeBtn = document.getElementById("close-btn");
+  const input = document.getElementById("mensagem-input");
+  const enviarBtn = document.getElementById("enviar-btn");
+  const chatBox = document.getElementById("chat-box");
+  const typingIndicator = document.getElementById("typing-indicator");
+
+  // Perguntas e respostas do ÁlvaroBot
+  const respostas = {
+    "1": "Travessa Bom Jardim, entre Triunvirato e Veiga Cabral n°303, Cidade Velha Belém-Pa.",
+    "2": "Horários manhã \n 8:30h até as 10:30h de Segunda a Quinta\n Horários Tarde \n14h-16h ou 14h-15:30h e 16h-18h de Segunda a Quinta.",
+    "3": "Possuímos Pacotes do nível Infantil(Alfabetização) até o 9° ano do Ensino Fundamental II. Entre em contato para mais informações.",
+    "4": "Telefone/WhatsApp: 91 98807-4549, Email: leilatatianeconceicao@gmail.com",
+    "5": "Do Ensino Infantil(Alfabetização) ao Fundamental II.",
+    default: "Desculpe, Selecione uma das 5 opções válidas.",
+  };
+
+  // Alternar exibição do chatbot
+  chatbotIcon.addEventListener("click", () => {
+    chatContainer.classList.toggle("active");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    chatContainer.classList.remove("active");
+  });
+
+  // Processar entrada do usuário
+  input.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+      enviarMensagem();
+    }
+  });
+
+  enviarBtn.addEventListener("click", enviarMensagem);
+
+  function enviarMensagem() {
+    const mensagem = input.value.trim();
+    if (mensagem) {
+      adicionarMensagemUsuario(mensagem);
+      processarMensagem(mensagem);
+      input.value = "";
+      input.focus();
+    }
+  }
+
+  function adicionarMensagemUsuario(mensagem) {
+    const div = document.createElement("div");
+    div.className = "chat-message user";
+    div.textContent = mensagem;
+    chatBox.appendChild(div);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
+
+  function adicionarMensagemBot(resposta) {
+    const div = document.createElement("div");
+    div.className = "chat-message bot";
+    div.innerHTML = `
+      <img src="/images/Blue Learning Centre Logo.png" class="message-avatar">
+      <span>${resposta}</span>`;
+    chatBox.appendChild(div);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
+
+  function adicionarMensagemComBotoes() {
+    typingIndicator.style.display = "flex";
+    chatBox.appendChild(typingIndicator);
+
+    setTimeout(() => {
+      typingIndicator.style.display = "none";
+
+      const div = document.createElement("div");
+      div.className = "chat-message bot";
+      div.innerHTML = `
+        <img src="/images/Blue Learning Centre Logo.png" class="message-avatar">
+        <span>Posso ajudar em algo mais?</span>
+        <div class="botao-container">
+          <button id="botao-sim">Sim</button>
+          <button id="botao-nao">Não</button>
+        </div>`;
+      chatBox.appendChild(div);
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      document.getElementById("botao-sim").onclick = () => {
+        removerBotoes();
+        mostrarOpcoesIniciais();
+      };
+
+      document.getElementById("botao-nao").onclick = () => {
+        removerBotoes();
+        mostrarMensagemDespedida();
+      };
+    }, 2000);
+  }
+
+  function removerBotoes() {
+    const botaoContainer = document.querySelector(".botao-container");
+    if (botaoContainer) {
+      botaoContainer.remove();
+    }
+  }
+
+  function mostrarOpcoesIniciais() {
+    adicionarMensagemBot(`Selecione uma das opções de ajuda abaixo:<br />
+      1- Localização mais Específica do Reforço🗺️.<br />
+      2- Horários de Aula⌚.<br />
+      3- Pacotes de Aula👩‍🏫.<br />
+      4- Contato📱. <br/>
+      5- Níveis Escolares🏫.`);
+  }
+
+  function mostrarMensagemDespedida() {
+    adicionarMensagemBot("Obrigado por usar o Chatbot Rever e Aprender! Tenha um ótimo dia!");
+  }
+
+  function processarMensagem(mensagem) {
+    typingIndicator.style.display = "flex";
+    chatBox.appendChild(typingIndicator);
+
+    setTimeout(() => {
+      const resposta = respostas[mensagem] || respostas.default;
+      typingIndicator.style.display = "none";
+      adicionarMensagemBot(resposta);
+      adicionarMensagemComBotoes();
+    }, 2000);
+  }
+});
+
+
 
 
 

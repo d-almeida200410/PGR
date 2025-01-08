@@ -355,13 +355,17 @@ a:hover {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#contactButton {
+#contactButton, #contactButton2, #contactButton3,#contactButton4, #contactButton5, #contactButton6
+, #contactButton7, #contactButton8,#contactButton9, #contactButton10,#contactButton11,#contactButton12,
+#contactButton13,#contactButton14,#contactButton15,#contactButton16,#contactButton17,#contactButton18,
+#contactButton19,#contactButton20,#contactButton21,#contactButton22 {
     background-color: #11ff00;
     color: #f0f0f0;
     border-color: #00ff88;
     border-radius: 5px;
     font-size: large;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    cursor: pointer;
 }
 
 /* Estilos Responsivos */
@@ -401,174 +405,3 @@ a:hover {
         font-size: medium; /* Ajusta o tamanho do botão */
     }
 }
-
-#contactButton2 {
-    background-color: #11ff00;
-    color: #f0f0f0;
-    border-color: #00ff88;
-    border-radius: 5px;
-    font-size: large;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-#contactButton3 {
-    background-color: #11ff00;
-    color: #f0f0f0;
-    border-color: #00ff88;
-    border-radius: 5px;
-    font-size: large;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-#contactButton4 {
-    background-color: #11ff00;
-    color: #f0f0f0;
-    border-color: #00ff88;
-    border-radius: 5px;
-    font-size: large;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-#contactButton5 {
-    background-color: #11ff00;
-    color: #f0f0f0;
-    border-color: #00ff88;
-    border-radius: 5px;
-    font-size: large;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-#contactButton6 {
-    background-color: #11ff00;
-    color: #f0f0f0;
-    border-color: #00ff88;
-    border-radius: 5px;
-    font-size: large;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-#contactButton7 {
-    background-color: #11ff00;
-    color: #f0f0f0;
-    border-color: #00ff88;
-    border-radius: 5px;
-    font-size: large;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-#contactButton8 {
-    background-color: #11ff00;
-    color: #f0f0f0;
-    border-color: #00ff88;
-    border-radius: 5px;
-    font-size: large;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-#contactButton9 {
-    background-color: #11ff00;
-    color: #f0f0f0;
-    border-color: #00ff88;
-    border-radius: 5px;
-    font-size: large;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-#contactButton10 {
-    background-color: #11ff00;
-    color: #f0f0f0;
-    border-color: #00ff88;
-    border-radius: 5px;
-    font-size: large;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-#contactButton11 {
-    background-color: #11ff00;
-    color: #f0f0f0;
-    border-color: #00ff88;
-    border-radius: 5px;
-    font-size: large;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-#contactButton12 {
-    background-color: #11ff00;
-    color: #f0f0f0;
-    border-color: #00ff88;
-    border-radius: 5px;
-    font-size: large;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-#contactButton13 {
-    background-color: #11ff00;
-    color: #f0f0f0;
-    border-color: #00ff88;
-    border-radius: 5px;
-    font-size: large;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-#contactButton14 {
-    background-color: #11ff00;
-    color: #f0f0f0;
-    border-color: #00ff88;
-    border-radius: 5px;
-    font-size: large;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-#contactButton15 {
-    background-color: #11ff00;
-    color: #f0f0f0;
-    border-color: #00ff88;
-    border-radius: 5px;
-    font-size: large;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-#contactButton16 {
-    background-color: #11ff00;
-    color: #f0f0f0;
-    border-color: #00ff88;
-    border-radius: 5px;
-    font-size: large;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-#contactButton17 {
-    background-color: #11ff00;
-    color: #f0f0f0;
-    border-color: #00ff88;
-    border-radius: 5px;
-    font-size: large;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-#contactButton18 {
-    background-color: #11ff00;
-    color: #f0f0f0;
-    border-color: #00ff88;
-    border-radius: 5px;
-    font-size: large;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-#contactButton19 {
-    background-color: #11ff00;
-    color: #f0f0f0;
-    border-color: #00ff88;
-    border-radius: 5px;
-    font-size: large;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-#contactButton20 {
-    background-color: #11ff00;
-    color: #f0f0f0;
-    border-color: #00ff88;
-    border-radius: 5px;
-    font-size: large;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-#contactButton21 {
-    background-color: #11ff00;
-    color: #f0f0f0;
-    border-color: #00ff88;
-    border-radius: 5px;
-    font-size: large;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-#contactButton22 {
-    background-color: #11ff00;
-    color: #f0f0f0;
-    border-color: #00ff88;
-    border-radius: 5px;
-    font-size: large;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-
