@@ -1,0 +1,574 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+/* Estilo básico da div */
+.homepagetitle {
+    text-align: center;
+    margin-top: 70px;
+  }
+  
+  /* Estilo do h1 com a fonte Cinzel */
+  .homepagetitle h1 {
+    font-size: 4rem;
+    font-family: 'Cinzel', serif; /* Fonte rebuscada */
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+  
+  /* Estilo das palavras individualmente */
+  .homepagetitle .word {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    background: linear-gradient(45deg, #11ff00, #ff0000, #3700ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .blinking-cursor {
+    display: inline-block;
+    width: 1ch; /* Espaço do cursor */
+    background-color: transparent;
+    animation: blink 0.8s step-start infinite;
+    color: #fff; /* Cor do cursor */
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Mudança de cor ao passar o mouse */
+.homepagetitle h1:hover .word {
+    transform: scale(1.1) rotate(-5deg);
+    color: #ff0;
+}
+
+.homepagetitle h1:hover .word:nth-child(1) {
+    color: #ff00ae;
+}
+
+.homepagetitle h1:hover .word:nth-child(2) {
+    color: #c3ff00;
+}
+
+.homepagetitle h1:hover .word:nth-child(3) {
+    color: #50d9ff;
+}
+
+/* Animação das palavras */
+.homepagetitle .word {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 1.5s forwards;
+    font-size: 5rem; /* Tamanho base */
+    position: relative; /* Necessário para efeitos ::before */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Delay de animação para palavras diferentes */
+.homepagetitle .word:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.homepagetitle .word:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.homepagetitle .word:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* Efeito de sombra para as palavras */
+.homepagetitle .word::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    color: #000;
+    filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.homepagetitle .word:hover::before {
+    filter: blur(20px);
+    transform: translate(5px, 5px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .blinking-cursor {
+        width: 0.8ch; /* Ajusta tamanho do cursor para telas menores */
+    }
+
+    .homepagetitle .word {
+        font-size: 2.5rem; /* Reduz tamanho das palavras */
+    }
+}
+
+@media (max-width: 480px) {
+    .homepagetitle h1 {
+        font-size: 1.8rem; /* Ajusta tamanho do título para telas pequenas */
+        text-align: center; /* Centraliza texto em dispositivos menores */
+    }
+
+    .homepagetitle .word {
+        font-size: 2rem; /* Reduz ainda mais o tamanho das palavras */
+        animation: fadeIn 1s forwards; /* Animação mais rápida para evitar lentidão */
+    }
+
+    .blinking-cursor {
+        width: 0.5ch; /* Cursor menor em dispositivos pequenos */
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Adiciona sombra para destaque */
+}
+
+.navbar .logo img {
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 25px;
+}
+
+.navbar .menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0 10px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s;
+    margin-right: 15px;
+}
+
+.navbar ul li a:hover {
+    color: #00ff88;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none; /* Oculta o menu em telas menores */
+        flex-direction: column; /* Exibe os itens verticalmente */
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Ajuste dependendo da altura da navbar */
+        left: 0;
+        padding: 20px 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Adiciona sombra ao dropdown */
+    }
+
+    .navbar ul.show {
+        display: flex; /* Mostra o menu quando ativo */
+    }
+
+    .navbar .menu-icon {
+        display: block; /* Mostra o ícone do menu em telas menores */
+    }
+
+
+    .navbar ul li a {
+        font-size: 18px; /* Aumenta o tamanho da fonte */
+    }
+}
+
+/* Para telas médias (notebooks, tablets maiores) */
+@media (max-width: 1024px) {
+    .navbar ul li a {
+        font-size: 14px; /* Ajusta o tamanho da fonte */
+    }
+}
+
+#notebook {
+    background: linear-gradient(white 90%, #f0f0f0 10%);
+    border: 1px solid #d3d3d3;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    margin: 20px auto;
+}
+
+/* Linhas de caderno */
+#notebook:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(transparent, transparent 24px, #d9d9d9 25px);
+    pointer-events: none;
+}
+
+#notebook:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 2px;
+    height: 100%;
+    background-color: #4285F4;
+    pointer-events: none;
+}
+
+p {
+    margin: 10px 0;
+    line-height: 1.6;
+    color: #000;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.icon {
+    vertical-align: middle;
+    margin-right: 8px;
+    width: 20px;
+    height: auto;
+}
+
+.contato h1 {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    #notebook {
+        max-width: 90%;
+        margin: 20px auto;
+    }
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%; /* Ajustável */
+    max-width: 300px; /* Define um limite para cartões maiores */
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    height: auto; /* Ajusta a altura automaticamente */
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5em;
+    margin: 0 0 10px;
+}
+
+.card-text {
+    font-size: 1em;
+    color: #000;
+    margin: 0 0 20px;
+}
+
+.titlecard {
+    text-align: center;
+    align-items: center;
+    color: #11ff00;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#contactButton {
+    background-color: #11ff00;
+    color: #f0f0f0;
+    border-color: #00ff88;
+    border-radius: 5px;
+    font-size: large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    .card-container {
+        gap: 15px; /* Reduz o espaço entre os cartões em telas menores */
+    }
+
+    .card {
+        width: 100%; /* Ocupa toda a largura em dispositivos menores */
+        max-width: 100%; /* Remove limite de tamanho */
+    }
+
+    .card-title {
+        font-size: 1.3em; /* Ajusta o tamanho da fonte */
+    }
+
+    .card-text {
+        font-size: 0.9em; /* Ajusta o tamanho da fonte */
+    }
+}
+
+@media (max-width: 480px) {
+    .card-container {
+        gap: 10px; /* Reduz ainda mais o espaço entre os cartões */
+    }
+
+    .card {
+        padding: 5px; /* Reduz o padding */
+    }
+
+    .card-content {
+        padding: 10px; /* Ajusta o padding interno do conteúdo */
+    }
+
+    #contactButton {
+        font-size: medium; /* Ajusta o tamanho do botão */
+    }
+}
+
+#contactButton2 {
+    background-color: #11ff00;
+    color: #f0f0f0;
+    border-color: #00ff88;
+    border-radius: 5px;
+    font-size: large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#contactButton3 {
+    background-color: #11ff00;
+    color: #f0f0f0;
+    border-color: #00ff88;
+    border-radius: 5px;
+    font-size: large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#contactButton4 {
+    background-color: #11ff00;
+    color: #f0f0f0;
+    border-color: #00ff88;
+    border-radius: 5px;
+    font-size: large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#contactButton5 {
+    background-color: #11ff00;
+    color: #f0f0f0;
+    border-color: #00ff88;
+    border-radius: 5px;
+    font-size: large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#contactButton6 {
+    background-color: #11ff00;
+    color: #f0f0f0;
+    border-color: #00ff88;
+    border-radius: 5px;
+    font-size: large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#contactButton7 {
+    background-color: #11ff00;
+    color: #f0f0f0;
+    border-color: #00ff88;
+    border-radius: 5px;
+    font-size: large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#contactButton8 {
+    background-color: #11ff00;
+    color: #f0f0f0;
+    border-color: #00ff88;
+    border-radius: 5px;
+    font-size: large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#contactButton9 {
+    background-color: #11ff00;
+    color: #f0f0f0;
+    border-color: #00ff88;
+    border-radius: 5px;
+    font-size: large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#contactButton10 {
+    background-color: #11ff00;
+    color: #f0f0f0;
+    border-color: #00ff88;
+    border-radius: 5px;
+    font-size: large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#contactButton11 {
+    background-color: #11ff00;
+    color: #f0f0f0;
+    border-color: #00ff88;
+    border-radius: 5px;
+    font-size: large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#contactButton12 {
+    background-color: #11ff00;
+    color: #f0f0f0;
+    border-color: #00ff88;
+    border-radius: 5px;
+    font-size: large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#contactButton13 {
+    background-color: #11ff00;
+    color: #f0f0f0;
+    border-color: #00ff88;
+    border-radius: 5px;
+    font-size: large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#contactButton14 {
+    background-color: #11ff00;
+    color: #f0f0f0;
+    border-color: #00ff88;
+    border-radius: 5px;
+    font-size: large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#contactButton15 {
+    background-color: #11ff00;
+    color: #f0f0f0;
+    border-color: #00ff88;
+    border-radius: 5px;
+    font-size: large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#contactButton16 {
+    background-color: #11ff00;
+    color: #f0f0f0;
+    border-color: #00ff88;
+    border-radius: 5px;
+    font-size: large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#contactButton17 {
+    background-color: #11ff00;
+    color: #f0f0f0;
+    border-color: #00ff88;
+    border-radius: 5px;
+    font-size: large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#contactButton18 {
+    background-color: #11ff00;
+    color: #f0f0f0;
+    border-color: #00ff88;
+    border-radius: 5px;
+    font-size: large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#contactButton19 {
+    background-color: #11ff00;
+    color: #f0f0f0;
+    border-color: #00ff88;
+    border-radius: 5px;
+    font-size: large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#contactButton20 {
+    background-color: #11ff00;
+    color: #f0f0f0;
+    border-color: #00ff88;
+    border-radius: 5px;
+    font-size: large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#contactButton21 {
+    background-color: #11ff00;
+    color: #f0f0f0;
+    border-color: #00ff88;
+    border-radius: 5px;
+    font-size: large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#contactButton22 {
+    background-color: #11ff00;
+    color: #f0f0f0;
+    border-color: #00ff88;
+    border-radius: 5px;
+    font-size: large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+
