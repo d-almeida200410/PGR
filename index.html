@@ -51,24 +51,43 @@
         const auth = firebase.auth();
 
         // Função para logar o usuário
-        async function logarUsuario() {
-            const email = document.getElementById('email').value;
-            const senha = document.getElementById('senha').value;
+async function logarUsuario() {
+    const email = document.getElementById('email').value;
+    const senha = document.getElementById('senha').value;
 
-            try {
-                const userCredential = await auth.signInWithEmailAndPassword(email, senha);
-                alert('Login realizado com sucesso!');
-                window.location.href = '/home.html'; // Substitua pelo nome da próxima página
-            } catch (error) {
-                if (error.code === 'auth/wrong-password') {
-                    alert('Senha incorreta. Tente novamente.');
-                } else if (error.code === 'auth/user-not-found') {
-                    alert('Usuário não encontrado. Verifique o email ou cadastre-se.');
-                } else {
-                    alert(`Erro: ${error.message}`);
-                }
-            }
+    const toast = document.createElement('div');
+    toast.classList.add('toast');
+    document.body.appendChild(toast);
+
+    try {
+        const userCredential = await auth.signInWithEmailAndPassword(email, senha);
+        
+        // Exibe uma mensagem de sucesso com um design elegante
+        toast.classList.add('toast-success');
+        toast.textContent = 'Login realizado com sucesso! Redirecionando...';
+        setTimeout(() => window.location.href = '/home.html', 2000); // Substitua pelo nome da próxima página
+        
+    } catch (error) {
+        let errorMessage = 'Ocorreu um erro. Tente novamente.';
+        if (error.code === 'auth/wrong-password') {
+            errorMessage = 'Senha incorreta. Por favor, verifique e tente novamente.';
+        } else if (error.code === 'auth/user-not-found') {
+            errorMessage = 'Usuário não encontrado. Verifique o e-mail ou cadastre-se.';
+        } else {
+            errorMessage = `Erro: ${error.message}`;
         }
+
+        // Exibe uma mensagem de erro com design
+        toast.classList.add('toast-error');
+        toast.textContent = errorMessage;
+    }
+
+    // Removendo a mensagem após o tempo de exibição
+    setTimeout(() => {
+        toast.remove();
+    }, 4000);
+}
+
     </script>
 </body>
 
