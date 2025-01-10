@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rever e Aprender</title>
+    <link rel="stylesheet" href="home.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/coruja.png">
+</head>
+
+<body class="home-page">
+    <div class="home" id="home">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#home"><img src="/images/Rever E Aprender (1).png" alt="Logo" /></a>
+            </div>
+            <div class="menu-icon" onclick="toggleMenu()">
+                &#9776; <!-- Ícone de menu -->
+            </div>
+            <ul style="font-family: 'Times New Roman', Times, serif;" class="nav-links">
+                <li><a href="#home">Principal</a></li>
+                <li><a href="#horarios">Horários</a></li>
+                <li><a href="pacotes.html">Pacotes</a></li>
+                <li><a href="#notebook">Contatos</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+            <a href="contratar.html"><button class="glow-on-hover" type="button">CONTRATAR</button></a>
+        </nav>
+        <div class="homepagetitle">
+            <h1>
+                <span class="word">Rever</span>
+                <span class="word">e</span>
+                <span class="word">Aprender</span>
+            </h1>
+        </div>
+        <div id="chalkboard">
+            Bem vindo ao site do Rever e Aprender.<span class="blinking-cursor">|</span>
+        </div>
+    </div>
+
+    <div id="horarios" class="horarios">
+        <div class="content">
+            <h1>Horários de Aula</h1>
+        </div>
+        <table class="schedule-table">
+            <thead>
+                <tr>
+                    <th>Horário</th>
+                    <th>Segunda</th>
+                    <th>Terça</th>
+                    <th>Quarta</th>
+                    <th>Quinta</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Manhã</td>
+                    <td>8:30h-10:30h</td>
+                    <td>8:30h-10:30h</td>
+                    <td>8:30h-10:30h</td>
+                    <td>8:30h-10:30h</td>
+                </tr>
+                <tr>
+                    <td>Tarde</td>
+                    <td>14h-16h, 14h-15:30 e 16h-18h</td>
+                    <td>14h-16h, 14h-15:30 e 16h-18h</td>
+                    <td>14h-16h, 14h-15:30 e 16h-18h</td>
+                    <td>14h-16h, 14h-15:30 e 16h-18h</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="content">
+            <h1>Níveis Escolares</h1>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img class="card-img" src="images/livros.png" alt="Imagem 1" />
+                        <h2 class="card-title">Alfabetização</h2>
+                    </div>
+                    <div class="card-back">
+                        <p>Reconhecimento de Letras;
+                            Compreensão dos sons correspondentes às letras;<br>
+                            Construção de Palavras e Frases;<br>
+                            Entendimento do Princípio Alfabético;<br>
+                            Compreensão de Leitura e Escrita.
+                        </p>
+                        <button id="animate_confetti">Contate-nos 📞</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img class="card-img" src="images/sinal.png" alt="Imagem 1" />
+                        <h2 class="card-title">Fundamental I</h2>
+                    </div>
+                    <div class="card-back">
+                        <p>Atividades Para Casa;<br>
+                            Revisão dos Conteúdos (Ministrados em sala de aula);<br>
+                            Exercícios Extras.<br>
+                        <p style="color: red;">OBS: Não Lecionamos Inglês e Redação</p>
+                        </p>
+                        <button id="animate_confetti1">Contate-nos 📞</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img class="card-img" src="/images/dois.png" alt="Imagem 1" />
+                        <h2 class="card-title">Fundamental II</h2>
+                    </div>
+                    <div class="card-back">
+                        <p>Atividades Para Casa;<br>
+                            Revisão dos Conteúdos (Ministrados em sala de aula);<br>
+                            Exercícios Extras.<br>
+                        <p style="color: red;">OBS: Não Lecionamos Inglês e Redação</p>
+                        </p>
+                        <button id="animate_confetti2">Contate-nos 📞</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img class="card-img" src="/images/tempo-de-aula.png" alt="Imagem 1" />
+                        <h2 class="card-title">Hora Aula</h2>
+                    </div>
+                    <div class="card-back">
+                        <p>2 Horas de Aula;<br>
+                            O Que Ficou Acordado Com o Responsável.
+                        </p>
+                        <button id="animate_confetti3">Contate-nos 📞</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contato">
+            <h1>Contato</h1>
+        </div>
+        <div id="notebook" class="notebook">
+            <div class="glow-text" id="glow-text">
+                Rever e Aprender
+            </div>
+            <p>
+                <img src="/images/mapa.png" alt="Ícone de mapa" class="icon">
+                Localização:
+                <a href="https://www.google.com/maps/search/?api=1&query=TV.+Bom+Jardim+303-Cidade+Velha,+entre+Triunvirato+e+Veiga+Cabral"
+                    target="_blank">
+                    TV. Bom Jardim 303.Cidade Velha.Belém-PA,CEP 66023-140.
+                </a>
+            </p>
+            <p>
+                <img src="/images/whatsapp.png" alt="Ícone do WhatsApp" class="icon">
+                WhatsApp:
+                <a href="https://wa.me/5591988074549" target="_blank">
+                    (91) 98807-4549
+                </a>
+            </p>
+            <div id="map" style="height: 300px; width: 100%;"></div>
+            <button id="agendarVisitaBtn">Agendar Visita</button>
+            <div class="form-container" id="formContainer">
+                <button id="closeFormBtn" class="close-btn">Fechar</button>
+                <h2>Agendamento de Visita</h2>
+                <form id="contactForm">
+                    <label for="responsavel">Nome do Responsável:</label>
+                    <input type="text" id="responsavel" name="responsavel" required />
+                    <label for="aluno">Nome do Aluno:</label>
+                    <input type="text" id="aluno" name="aluno" required />
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required />
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required />
+                    <label for="nivelEnsino">Nível de Ensino Escolar:</label>
+                    <select id="nivelEnsino" name="nivelEnsino" required>
+                        <option value="" disabled selected>Selecione...</option>
+                        <option value="Alfabetização">Alfabetização</option>
+                        <option value="Fundamental I">Fundamental I</option>
+                        <option value="Fundamental II">Fundamental II</option>
+                        <option value="Hora Aula">Hora Aula</option>
+                    </select>
+                    <label for="escola">Escola Atual:</label>
+                    <input type="text" id="escola" name="escola" required />
+                    <label for="horarioVisita">Horário da Visita:</label>
+                    <input type="datetime-local" id="horarioVisita" name="horarioVisita" required />
+                    <button type="submit">Enviar</button>
+                </form>
+                <div class="form-footer">
+                    Ao enviar, você será redirecionado para o WhatsApp.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chatbot-icon" id="chatbot-icon">
+      <img src="/images/Blue Learning Centre Logo.png" />
+    </div>
+</div>
+
+    <div class="chat-container" id="chat-container">
+      <div class="chat-header">
+        <img src="/images/Blue Learning Centre Logo.png" class="chat-avatar" />
+        <span class="chat-title">Rever e Aprender</span>
+        <button class="close-btn" id="close-btn">✖</button>
+      </div>
+      <div id="chat-box" class="chat-box">
+        <div class="chat-message bot">
+          <img src="/images/Blue Learning Centre Logo.png" class="message-avatar" />
+          <span>Olá! Sou o Rever e Aprender. Selecione uma das opções de ajuda abaixo:<br />
+            1- Localização mais Específica do Reforço🗺️.<br />
+            2- Horários de Aula⌚.<br />
+            3- Pacotes de Aula👩‍🏫.<br />
+            4- Contato📱. <br/>
+            5- Níveis Escolares🏫.
+          </span>
+        </div>
+      </div>
+      <div class="input-container">
+        <input type="text" id="mensagem-input" placeholder="Digite sua mensagem aqui..." autofocus />
+        <button id="enviar-btn" title="Enviar mensagem">➤</button>
+      </div>
+    </div>
+    <div id="typing-indicator" class="typing-indicator" style="display: none">
+      <img src="/images/Blue Learning Centre Logo.png" alt="ÁlvaroBot" class="message-avatar" />
+      <span>Digitando...</span>
+    </div>
+</body>
+
+<script src="script.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+    // Inicializar o mapa usando Leaflet.js
+    const map = L.map('map').setView([-1.4554, -48.4895], 15); // Coordenadas para Belém, PA
+
+    // Adicionar camada de mapa (OpenStreetMap)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 21,
+    }).addTo(map);
+
+    // Adicionar marcador na localização desejada
+    L.marker([-1.4554, -48.4895])
+        .addTo(map)
+        .bindPopup('TV. Bom Jardim 303, Cidade Velha, Belém, PA')
+        .openPopup();
+</script>
+</html>
