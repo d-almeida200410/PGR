@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Firebase App -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <link rel="stylesheet" href="login.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/coruja.png">
+    <title>Login - Rever e Aprender</title>
+</head>
+
+<body>
+    <div class="form-card1">
+        <div class="form-card2">
+            <form class="form">
+                <div class="title">
+                    <h1>Rever e Aprender</h1>
+                </div>
+                <div class="logo">
+                    <img src="images/sabedoria.png" alt="Logo">
+                </div>
+                <p class="form-heading">Login</p>
+                <div class="form-field">
+                    <input required="" placeholder="Email" class="input-field" type="email" id="email" />
+                </div>
+                <div class="form-field">
+                    <input required="" placeholder="Senha" class="input-field" type="password" id="senha" />
+                </div>
+                <button class="sendMessage-btn" type="button" onclick="logarUsuario()">Entrar</button>
+                <a href="cadastro.html" class="form-heading">Cadastrar</a>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Configuração do Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyAg6HLCA3OaUPh6Df51rv6eYeh38IvjWuI",
+            authDomain: "loginreveraprender.firebaseapp.com",
+            projectId: "loginreveraprender",
+            storageBucket: "loginreveraprender.appspot.com",
+            messagingSenderId: "838606520052",
+            appId: "1:838606520052:web:dc4a5d255f4666a5ec68a1"
+        };
+
+        // Inicializar Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        // Função para logar o usuário
+        async function logarUsuario() {
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+
+            const toast = document.createElement('div');
+            toast.classList.add('toast');
+            document.body.appendChild(toast);
+
+            try {
+                const userCredential = await auth.signInWithEmailAndPassword(email, senha);
+
+                // Exibe mensagem de sucesso
+                toast.classList.add('toast-success');
+                toast.textContent = 'Login realizado com sucesso! Redirecionando...';
+                setTimeout(() => window.location.href = 'index.html', 2000);
+
+            } catch (error) {
+                let errorMessage = 'Ocorreu um erro. Tente novamente.';
+                if (error.code === 'auth/wrong-password') {
+                    errorMessage = 'Senha incorreta. Por favor, tente novamente.';
+                } else if (error.code === 'auth/user-not-found') {
+                    errorMessage = 'Usuário não encontrado. Cadastre-se!';
+                } else {
+                    errorMessage = `Erro: ${error.message}`;
+                }
+
+                toast.classList.add('toast-error');
+                toast.textContent = errorMessage;
+            }
+
+            // Remove a mensagem após 4 segundos
+            setTimeout(() => toast.remove(), 4000);
+        }
+    </script>
+</body>
+
+</html>
