@@ -243,6 +243,8 @@ document.addEventListener("DOMContentLoaded", () => {
     "3": "Possuímos Pacotes do nível Infantil(Alfabetização) até o 9° ano do Ensino Fundamental II. Entre em contato para mais informações.",
     "4": "Telefone/WhatsApp: 91 98807-4549, Email: leilatatianeconceicao@gmail.com",
     "5": "Do Ensino Infantil(Alfabetização) ao Fundamental II.",
+    "oi": "Olá😉.",
+    "olá": "Oi😉.",
     default: "Desculpe, Selecione uma das 5 opções válidas.",
   };
 
@@ -332,11 +334,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function mostrarOpcoesIniciais() {
     adicionarMensagemBot(`Selecione uma das opções de ajuda abaixo:<br />
-      1- Localização mais Específica do Reforço🗺️.<br />
-      2- Horários de Aula⌚.<br />
-      3- Pacotes de Aula👩‍🏫.<br />
-      4- Contato📱. <br/>
-      5- Níveis Escolares🏫.`);
+      1 ➡️ Localização mais Específica do Reforço🗺️.<br />
+      2 ➡️ Horários de Aula⌚.<br />
+      3 ➡️ Pacotes de Aula👩‍🏫.<br />
+      4 ➡️ Contato📱. <br/>
+      5 ➡️ Níveis Escolares🏫.`);
   }
 
   function mostrarMensagemDespedida() {

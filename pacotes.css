@@ -1,14 +1,61 @@
 body {
-    background-color: black;
-    color: white;
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background: linear-gradient(135deg, #020024, #090979, #00d4ff);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    color: white;
+    font-family: Arial, sans-serif;
+    position: relative;
+    min-height: 100vh;
 }
 
 html {
     scroll-behavior: smooth;
+    height: 100%;
 }
+
+/* Efeito de estrelas brilhantes */
+.star {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: twinkle 3s infinite ease-in-out;
+    z-index: 1; /* Garantir que as estrelas fiquem no topo do gradiente */
+}
+
+/* Animação do gradiente */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Animação das estrelas */
+@keyframes twinkle {
+    0% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+}
+
+
 /* Estilo básico da div */
 .homepagetitle {
     text-align: center;
@@ -18,7 +65,7 @@ html {
   /* Estilo do h1 com a fonte Cinzel */
   .homepagetitle h1 {
     font-size: 4rem;
-    font-family: 'Cinzel', serif; /* Fonte rebuscada */
+    font-family: serif; /* Fonte rebuscada */
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -407,3 +454,110 @@ a:hover {
         font-size: medium; /* Ajusta o tamanho do botão */
     }
 }
+.cardq {
+    width: fit-content;
+    max-width: 90%; /* Para restringir o tamanho máximo em telas pequenas */
+    height: fit-content;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    gap: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+    margin: 0 auto; /* Centraliza o elemento na tela */
+  }
+  
+  /* Para todas as redes sociais */
+  .socialContainer {
+    width: 52px;
+    height: 52px;
+    background-color: rgb(44, 44, 44);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition-duration: 0.3s;
+  }
+  
+  .containerOne:hover {
+    background-color: #d62976;
+    transition-duration: 0.3s;
+  }
+  
+  .containerFour:hover {
+    background-color: #128C7E;
+    transition-duration: 0.3s;
+  }
+  
+  .containerMap:hover {
+    background-color: rgba(17, 0, 255, 0.8);
+    transition-duration: 0.3s;
+  }
+  
+  .containerEmail:hover {
+    background-color: rgba(255, 0, 0, 0.8);
+    transition-duration: 0.3s;
+  }
+  
+  .socialContainer:active {
+    transform: scale(0.9);
+    transition-duration: 0.3s;
+  }
+  
+  .socialSvg {
+    width: 17px;
+  }
+  
+  .socialSvg path {
+    fill: rgb(255, 255, 255);
+  }
+  
+  .socialContainer:hover .socialSvg {
+    animation: slide-in-top 0.3s both;
+  }
+  
+  @keyframes slide-in-top {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Media Queries para responsividade */
+  @media (max-width: 768px) {
+    .cardq {
+      flex-wrap: wrap; /* Permite quebra de linha para ícones em telas menores */
+      padding: 15px;
+    }
+  
+    .socialContainer {
+      width: 48px;
+      height: 48px;
+    }
+  
+    .socialSvg {
+      width: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .cardq {
+      gap: 15px;
+    }
+  
+    .socialContainer {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .socialSvg {
+      width: 13px;
+    }
+  }
+  
